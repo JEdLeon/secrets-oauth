@@ -87,7 +87,7 @@ passport.use(new googleStrategy({
 passport.use(new facebookStrategy({
     clientID: process.env.FB_CLIENT_ID,
     clientSecret: process.env.FB_CLIENT_SECRET,
-    callbackURL: "http://localhost:3301/auth/facebook/secrets"
+    callbackURL: "https://secrets-v7cy.onrender.com/auth/facebook/secrets"
 },
     function (accessToken, refreshToken, profile, cb) {
         User.findOrCreate({ facebookId: profile.id, username: profile.displayName }, function (err, user) {
