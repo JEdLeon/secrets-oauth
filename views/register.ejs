@@ -1,42 +1,48 @@
 <%- include('partials/header') %>
-<div class="container mt-5">
-  <h1>Register</h1>
+  <div class="container mt-5">
+    <h1>Register</h1>
 
-  <div class="row">
-    <div class="col-sm-8">
-      <div class="card">
-        <div class="card-body">
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="card">
+          <div class="card-body">
 
-          <!-- Makes POST request to /register route -->
-          <form action="/register" method="POST">
-            <div class="form-group">
-              <p class="error" <% if(!error) { %> hidden <% } %>>This email is already in use.</p>
-              <label for="email">Email</label>
-              <input type="email" class="form-control" name="username" placeholder="this@example.com" required>
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" name="password" required>
-            </div>
-            <button type="submit" class="btn btn-dark mt-2">Register</button>
-          </form>
+            <!-- Makes POST request to /register route -->
+            <form action="/register" method="POST">
+              <div class="form-group">
+                <p class="error" <% if(!error) { %> hidden <% } %>>This email is already in use.</p>
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="username" placeholder="this@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" required>
+              </div>
+              <button type="submit" class="btn btn-dark mt-2">Register</button>
+            </form>
 
+          </div>
         </div>
       </div>
+
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <a class="btn btn-block btn-social btn-google w-100 text-center" href="/auth/google" role="button">
+              <i class="fa-brands fa-google"></i>
+              Sign Up with Google
+            </a>
+          </div>
+          <div class="card-body">
+            <a class="btn btn-block btn-social btn-facebook w-100 text-center" href="/auth/facebook" role="button">
+              <i class="fa-brands fa-facebook"></i>
+              Sign Up with Facebook
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-    <!-- <div class="col-sm-4">
-      <div class="card social-block">
-        <div class="card-body">
-          <a class="btn btn-block" href="/auth/google" role="button">
-            <i class="fab fa-google"></i>
-            Sign Up with Google
-          </a>
-        </div>
-      </div>
-    </div> -->
-
   </div>
-</div>
 
-<%- include('partials/header') %>
+  <%- include('partials/footer') %>
