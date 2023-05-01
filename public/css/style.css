@@ -10,11 +10,6 @@ body {
     font-weight: bold;
 }
 
-.centered {
-    padding-top: 200px;
-    text-align: center;
-}
-
 .secret-text {
     text-align: center;
     font-size: 2rem;

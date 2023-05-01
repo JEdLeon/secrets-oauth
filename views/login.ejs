@@ -10,11 +10,11 @@
 
             <!-- Makes POST request to /login route -->
             <form action="/login" method="POST">
+              <p class="error" <% if(error !='email' ) { %> hidden <% } %>>Not valid email.</p>
+              <p class="error" <% if(error !='password' ) { %> hidden <% } %>>Not valid password.</p>
               <div class="form-group">
-                <p class="error" <% if(error !='email' ) { %> hidden <% } %>>Not valid email.</p>
-                <p class="error" <% if(error !='password' ) { %> hidden <% } %>>Not valid password.</p>
                 <label for="email">Email</label>
-                <input type="email" class="form-control" name="username" required>
+                <input type="email" class="form-control" name="email" required>
               </div>
               <div class="form-group">
                 <label for="password">Password</label>
