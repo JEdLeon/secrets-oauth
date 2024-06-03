@@ -33,7 +33,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-const localDB = 'mongodb://127.0.0.1:27017/userDB';
+const localDB = 'mongodb://127.0.0.1:27017/secretsDB';
 const atlasDB = `${process.env.ATLASDB}/secretsDB`;
 async function main() {
     await mongoose.connect(atlasDB);
@@ -66,7 +66,7 @@ passport.use(new localStrategy({ usernameField: 'email' }, User.authenticate()))
 passport.use(new googleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "https://secrets-v7cy.onrender.com/auth/google/secrets",
+    callbackURL: "https://secrets-xjt4.onrender.com/auth/google/secrets",
     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
 },
     function (accessToken, refreshToken, profile, cb) {
@@ -80,7 +80,7 @@ passport.use(new googleStrategy({
 passport.use(new facebookStrategy({
     clientID: process.env.FB_CLIENT_ID,
     clientSecret: process.env.FB_CLIENT_SECRET,
-    callbackURL: "https://secrets-v7cy.onrender.com/auth/facebook/secrets",
+    callbackURL: "https://secrets-xjt4.onrender.com/auth/facebook/secrets",
 },
     function (accessToken, refreshToken, profile, cb) {
         User.findOrCreate({ facebookId: profile.id, username: profile.displayName }, function (err, user) {
